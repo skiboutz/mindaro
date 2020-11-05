@@ -34,7 +34,7 @@ ingress:
     #     - chart-example.local
 secrets:
   mongo:
-    connectionstring: {{ .Release.Name }}-mongodb://databases-mongo
+    connectionstring: bikesharingapp-mongodb://databases-mongo
     dbname: resdb
     collection: reservation
   # Optionally specify a set of secret objects whose values

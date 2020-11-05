@@ -36,7 +36,7 @@ secrets:
   mongo:
     database: admin
     collection: bikes
-    connectionstring: mongodb://databases-mongo
+    connectionstring:  mongo-mongodb://databases-mongo
   # Optionally specify a set of secret objects whose values
   # will be injected as environment variables by default.
   # You should add this section to a file like secrets.yaml

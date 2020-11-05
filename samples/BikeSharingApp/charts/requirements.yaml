@@ -1,7 +1,10 @@
 dependencies:
-  - name: databases
+  - name: database
     version: 0.1.0
     repository: "file://../Databases/charts/databases"
+  - name: mongodb
+    version: 9.3.x
+    repository: https://charts.bitnami.com/bitnami
   - name: bikes
     version: 0.1.0
     repository: "file://../Bikes/charts/bikes"

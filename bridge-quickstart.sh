@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# Please install the below pre-requisites if using this on your local machine, or alternately, you can just use Azure Cloud Shell for a seamless experience.
+# Please install the below pre-requisites if using this on your local machine, or alternately, you can just use azure bash cloudshell for a seamless experience.
 #1. azure cli    :   https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 #2. kubectl      :   https://kubernetes.io/docs/tasks/tools/install-kubectl/
 #3. curl
@@ -126,6 +126,7 @@ az aks get-credentials -g $RGNAME -n $AKSNAME
 # Use Helm to deploy a traefik ingress controller
 echo "helm repo add && helm repo update"
 $HELMDIR/helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+$HELMDIR/helm repo add bitnami https://charts.bitnami.com/bitnami
 $HELMDIR/helm repo update
 
 echo ""
@@ -160,8 +161,8 @@ echo "helm install bikesharingapp (average time to install = 4 minutes)"
 $HELMDIR/helm install bikesharingapp "$CHARTDIR" \
    --set bikesharingweb.ingress.hosts={$BIKENS.bikesharingweb.$NIPIOFQDN} \
    --set gateway.ingress.hosts={$BIKENS.gateway.$NIPIOFQDN} \
-   --set bikesharingweb.ingress.annotations."kubernetes\.io/ingress\.class"=traefik \
-   --set gateway.ingress.annotations."kubernetes\.io/ingress\.class"=traefik \
+   --set bikesharingweb.ingress.annotations."kubernetes\.io/ingress\.class"="traefik" \
+   --set gateway.ingress.annotations."kubernetes\.io/ingress\.class"="traefik" \
    --dependency-update \
    --namespace $BIKENS \
    --timeout 9m \

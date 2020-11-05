@@ -59,13 +59,7 @@ Open the source code for the stats-api in VS Code.
 code .
 ```
 
-Once VS Code has opened, install dependencies by running npm install in a terminal window (CTRL + ~).
-
-```
-npm install
-```
-
-Next, place a breakpoint on line 17 of server.js.
+Place a breakpoint on line 17 of server.js.
 
 Open the `Command Pallette (Ctrl + SHIFT + P) or (CMD + SHIFT + P)` and type Bridge to Kubernetes. Select the `"Bridge to Kubernetes: Configure"` option.
 

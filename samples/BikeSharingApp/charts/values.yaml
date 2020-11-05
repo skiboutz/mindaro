@@ -14,3 +14,8 @@ gateway:
       kubernetes.io/ingress.class: traefik 
     hosts:
       - dev.gateway.<REPLACE_ME_WITH_HOST_SUFFIX>  # Assumes deployment to the 'dev' namespace
+
+mongodb:
+  useStatefulSet: true
+  persistence:
+    size: 4Gi

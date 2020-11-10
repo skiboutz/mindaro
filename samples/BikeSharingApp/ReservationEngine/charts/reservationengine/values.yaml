@@ -38,7 +38,7 @@ secrets:
   billing:
     dnsname: billing
   mongo:
-    connectionstring: mongodb://databases-mongo
+    connectionstring: mongodb://bikesharingapp-mongodb
     dbname: resdb
     collection: reservation
   # Optionally specify a set of secret objects whose values

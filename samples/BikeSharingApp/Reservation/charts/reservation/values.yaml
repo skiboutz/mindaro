@@ -34,7 +34,7 @@ ingress:
     #     - chart-example.local
 secrets:
   mongo:
-    connectionstring: bikesharingapp-mongodb://databases-mongo
+    connectionstring: mongodb://bikesharingapp-mongodb
     dbname: resdb
     collection: reservation
   # Optionally specify a set of secret objects whose values

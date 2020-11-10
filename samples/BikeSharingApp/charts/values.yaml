@@ -19,3 +19,5 @@ mongodb:
   useStatefulSet: true
   persistence:
     size: 4Gi
+  auth:
+    enabled: false
